@@ -1,0 +1,2 @@
+# Confluence_bot
+RAG-based chatbot that answers questions from Confluence pages with citations
