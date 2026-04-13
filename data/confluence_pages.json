@@ -1,0 +1,26 @@
+[
+  {
+    "id": "001",
+    "title": "How to Reset Your Password",
+    "body": "To reset your password, navigate to the login page and click on 'Forgot Password'. Enter your registered email address and you will receive a reset link within 5 minutes. The link expires after 24 hours. If you do not receive the email, check your spam folder or contact the IT helpdesk at helpdesk@company.com. Passwords must be at least 12 characters long and contain at least one uppercase letter, one number, and one special character.",
+    "space": "IT Support",
+    "author": "John Smith",
+    "url": "https://company.atlassian.net/wiki/spaces/IT/pages/001"
+  },
+  {
+    "id": "002",
+    "title": "Onboarding Checklist for New Employees",
+    "body": "Welcome to the team! Here is your onboarding checklist. On day one, collect your laptop from the IT desk on the 3rd floor and set up your company email using the instructions in the welcome email. On day two, complete the mandatory security training available on the Learning Portal. By end of week one, schedule a meeting with your manager to discuss your 30-60-90 day plan. Make sure to join the company Slack and add yourself to your team channel. Your employee ID card will be ready for pickup from reception within 3 business days.",
+    "space": "HR",
+    "author": "Sarah Johnson",
+    "url": "https://company.atlassian.net/wiki/spaces/HR/pages/002"
+  },
+  {
+    "id": "003",
+    "title": "Deploying to Production — Engineering Guide",
+    "body": "All production deployments must go through the CI/CD pipeline. Never deploy directly to production servers. To trigger a deployment, merge your pull request into the main branch after receiving at least two approvals. The pipeline runs automated tests, security scans, and builds a Docker image. Deployment windows are Tuesday and Thursday between 2pm and 4pm UTC only. If a deployment fails, the pipeline automatically rolls back to the last stable version. Monitor the deployment in Grafana and check the #deployments Slack channel for status updates. For hotfixes outside the deployment window, get approval from the Engineering Lead.",
+    "space": "Engineering",
+    "author": "Alex Chen",
+    "url": "https://company.atlassian.net/wiki/spaces/ENG/pages/003"
+  }
+]
