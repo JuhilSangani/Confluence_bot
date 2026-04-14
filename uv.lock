@@ -264,6 +264,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "langchain" },
     { name = "langchain-community" },
+    { name = "langchain-text-splitters" },
     { name = "pydantic-settings" },
     { name = "uvicorn" },
 ]
@@ -273,6 +274,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.135.3" },
     { name = "langchain", specifier = ">=1.2.15" },
     { name = "langchain-community", specifier = ">=0.4.1" },
+    { name = "langchain-text-splitters", specifier = ">=1.1.1" },
     { name = "pydantic-settings", specifier = ">=2.13.1" },
     { name = "uvicorn", specifier = ">=0.44.0" },
 ]
