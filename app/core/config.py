@@ -16,6 +16,14 @@ class Settings(BaseSettings):
     APP_NAME: str = "ConfluenceBot"
     APP_VERSION: str = "0.1.0"
 
+    # Embedding model — runs locally via Ollama
+    EMBEDDING_MODEL: str = "nomic-embed-text"
+    OLLAMA_BASE_URL: str = "http://localhost:11434"
+
+    # LLM — runs via Groq cloud API
+    GROQ_API_KEY: str
+    LLM_MODEL: str = "llama-3.1-8b-instant"
+
     class Config:
         env_file = ".env",  #Tells Pydantic where to find .env file
         env_file_encoding = "utf-8"

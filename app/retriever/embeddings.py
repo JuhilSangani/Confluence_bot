@@ -1,4 +1,7 @@
 from langchain_ollama import OllamaEmbeddings
+from app.core.config import get_settings
+
+settings = get_settings()
 
 def get_embedding_model() -> OllamaEmbeddings:
     """
@@ -6,6 +9,6 @@ def get_embedding_model() -> OllamaEmbeddings:
     nomic-embed-text model running locally via Ollama.
     """
     return OllamaEmbeddings(
-        model="nomic-embed-text",
-        base_url="http://localhost:11434"
+        model=settings.EMBEDDING_MODEL,
+        base_url=settings.OLLAMA_BASE_URL,
     )

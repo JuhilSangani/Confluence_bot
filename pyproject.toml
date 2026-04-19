@@ -9,6 +9,7 @@ dependencies = [
     "fastapi>=0.135.3",
     "langchain>=1.2.15",
     "langchain-community>=0.4.1",
+    "langchain-groq>=1.1.2",
     "langchain-ollama>=1.1.0",
     "langchain-text-splitters>=1.1.1",
     "pydantic-settings>=2.13.1",
