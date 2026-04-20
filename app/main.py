@@ -1,8 +1,16 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from app.core.config import get_settings
 from app.api.routes import router
+from app.core.database import initialize_database
 
 settings = get_settings()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup — runs once when the app starts
+    initialize_database()
+    yield
 
 app = FastAPI(
     title=settings.APP_NAME,
