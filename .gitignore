@@ -209,3 +209,5 @@ __marimo__/
 
 faiss_index/
 .DS_Store
+
+confluencebot.db
