@@ -1,5 +1,4 @@
-# This is the conductor of the entire RAG pipeline. It coordinates retrieval, prompt building, LLM generation, 
-# and citation extraction into one clean function that the API layer calls.
+# RAG pipeline - coordinates retrieval, prompt building, LLM generation, and citation extraction into one clean function that the API layer calls.
 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_groq import ChatGroq
@@ -74,7 +73,7 @@ def ask_question(question: str, k: int = 3) -> dict:
     # Format chunks into a readable context block
     context = format_context(chunks)
 
-    # Build the prompt with strict anti-hallucination instructions
+    # prompt with strict anti-hallucination instructions
     system_prompt = """You are ConfluenceBot, a precise and trustworthy assistant that answers questions strictly based on the provided Confluence page content.
 
 STRICT RULES YOU MUST FOLLOW:
