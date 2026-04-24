@@ -3,7 +3,7 @@
 > A production-grade RAG (Retrieval-Augmented Generation) chatbot that answers questions 
 > from Confluence pages with cited, grounded answers — zero hallucination.
 
-![Chat Interface](assets/screenshot_chat.jpeg)
+![Chat Interface](assets/Screenshot_chat.jpeg)
 
 ---
 
@@ -65,10 +65,10 @@ User Question (Streamlit UI)
 ## 📸 Screenshots
 
 ### Chat with Citations
-![Chat Interface](assets/screenshot_chat.jpeg)
+![Chat Interface](assets/Screenshot_chat.jpeg)
 
 ### Source Management
-![Sources Tab](assets/screenshot_sources.jpeg)
+![Sources Tab](assets/Screenshot_sources.jpeg)
 
 ---
 
