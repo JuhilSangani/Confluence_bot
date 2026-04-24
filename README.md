@@ -155,33 +155,35 @@ Visit `http://localhost:8501`
 
 ## 📁 Project Structure  
 
-confluencebot/  
-├── app/  
-│   ├── api/  
-│   │   └── routes.py          # FastAPI endpoints  
-│   ├── chains/  
-│   │   └── rag_chain.py       # RAG pipeline orchestration  
-│   ├── core/  
-│   │   ├── config.py          # Centralized settings via Pydantic  
-│   │   └── database.py        # SQLite chat and source persistence  
-│   ├── ingestion/  
-│   │   ├── loader.py          # Mock JSON loader (testing)  
-│   │   ├── confluence_loader.py  # Real Confluence API loader  
-│   │   ├── confluence_fetcher.py # URL-based page fetcher  
-│   │   └── chunker.py         # RecursiveCharacterTextSplitter  
-│   ├── retriever/  
-│   │   ├── embeddings.py      # Ollama nomic-embed-text  
-│   │   └── vector_store.py    # FAISS build, save, load, search  
-│   └── main.py                # FastAPI app entry point  
-├── data/  
-│   └── confluence_pages.json  # Mock Confluence pages  
-├── assets/  
-│   ├── Screenshot_chat.jpeg  
-│   └── Screenshot_sources.jpeg  
-├── ui.py                      # Streamlit frontend  
-├── .env                       # Never committed  
-├── pyproject.toml             # uv dependency management  
-└── README.md  
+```
+confluencebot/
+├── app/
+│   ├── api/
+│   │   └── routes.py          # FastAPI endpoints
+│   ├── chains/
+│   │   └── rag_chain.py       # RAG pipeline orchestration
+│   ├── core/
+│   │   ├── config.py          # Centralized settings via Pydantic
+│   │   └── database.py        # SQLite chat and source persistence
+│   ├── ingestion/
+│   │   ├── loader.py          # Mock JSON loader (testing)
+│   │   ├── confluence_loader.py  # Real Confluence API loader
+│   │   ├── confluence_fetcher.py # URL-based page fetcher
+│   │   └── chunker.py         # RecursiveCharacterTextSplitter
+│   ├── retriever/
+│   │   ├── embeddings.py      # Ollama nomic-embed-text
+│   │   └── vector_store.py    # FAISS build, save, load, search
+│   └── main.py                # FastAPI app entry point
+├── data/
+│   └── confluence_pages.json  # Mock Confluence pages
+├── assets/
+│   ├── Screenshot_chat.jpeg
+│   └── Screenshot_sources.jpeg 
+├── ui.py                      # Streamlit frontend
+├── .env                       # Never committed
+├── pyproject.toml             # uv dependency management
+└── README.md
+```
 
 ---
 
