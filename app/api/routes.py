@@ -213,17 +213,45 @@ async def remove_source(source_id: int):
 # INGESTION ENDPOINT
 @router.get("/ingest", response_model=IngestResponse)
 async def ingest():
-    """
-    Triggers full ingestion of mock Confluence JSON data. Used to initialize or refresh the knowledge base.
-    """
+    """Triggers full ingestion from real Confluence API. Fetches all pages from configured space, chunks, embeds, and saves to FAISS index."""
     try:
-        # Run the full ingestion pipeline
-        documents = load_confluence_documents()
+        from app.ingestion.confluence_loader import load_confluence_documents as load_real
+        documents = load_real()
+        chunks = chunk_documents(documents)
+        build_vector_store(chunks)
+
+        # Save sources to database for UI display
+        from app.core.database import add_source, source_exists
+        for doc in documents:
+            if not source_exists(doc.metadata["url"]):
+                add_source(
+                    title=doc.metadata["title"],
+                    url=doc.metadata["url"]
+                )
+
+        return IngestResponse(
+            message=f"Ingested {len(documents)} real Confluence pages successfully.",
+            documents_loaded=len(documents),
+            chunks_created=len(chunks),
+        )
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Ingestion pipeline error: {str(e)}"
+        )
+
+@router.get("/ingest/mock", response_model=IngestResponse)
+async def ingest_mock():
+    """Triggers ingestion from mock JSON data. Useful for testing without hitting the Confluence API."""
+    try:
+        from app.ingestion.loader import load_confluence_documents as load_mock
+        documents = load_mock()
         chunks = chunk_documents(documents)
         build_vector_store(chunks)
 
         return IngestResponse(
-            message="Ingestion complete. FAISS index updated successfully.",
+            message="Mock ingestion complete. FAISS index updated successfully.",
             documents_loaded=len(documents),
             chunks_created=len(chunks),
         )
