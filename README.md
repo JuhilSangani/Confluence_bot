@@ -234,4 +234,4 @@ Built by **[Juhil Sangani]** as a hands-on learning project to master RAG-based 
 
 ## 📄 License
 
-MIT License — feel free to use this as a reference for your own RAG projects.
+MIT License — feel free to use this as a reference for your own RAG projects. 
